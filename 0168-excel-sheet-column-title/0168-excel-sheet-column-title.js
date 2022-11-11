@@ -3,8 +3,8 @@
  * @return {string}
  */
 var convertToTitle = function(columnNumber) {
-    let string = "0ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let sum = 0, mod, cnt = 0, str='';
+    let string = "ZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let mod, str='';
     
     while(1){
         if(columnNumber <= 26){
@@ -14,7 +14,7 @@ var convertToTitle = function(columnNumber) {
         mod = columnNumber % 26;
         if(mod !== 0) str = str + string[mod];
         else if(mod === 0) {
-            str = str + 'Z';
+            str = str + string[mod];
             columnNumber -= 1;
         }
         columnNumber = parseInt((columnNumber/26), 10);
